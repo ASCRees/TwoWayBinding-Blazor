@@ -1,0 +1,37 @@
+﻿@page "/TwoWayBindingInFile"
+@using TwoWayBinding_Blazor.Data
+
+<h3>Two Way Binding In File</h3>
+
+<div>
+    <EditForm EditContext="@editContext1">
+
+        <InputNumber @bind-Value="calcNumbers.Number1" />
+        +
+        <InputNumber @bind-Value="calcNumbers.Number2" />
+        =
+        <InputNumber @bind-Value="calcNumbers.Result" />
+    </EditForm>
+</div>
+
+@code {
+    private EditContext editContext1;
+
+    private CalcNumbers calcNumbers = new CalcNumbers();
+
+    protected override void OnInitialized()
+    {
+        editContext1 = new EditContext(calcNumbers);
+        editContext1.OnFieldChanged += HandleFieldChanged;
+
+    }
+
+    private void HandleFieldChanged(object sender, FieldChangedEventArgs e)
+    {
+        calcNumbers.Result = calcNumbers.Number1 + calcNumbers.Number2;
+    }
+    public void Dispose()
+    {
+        editContext1.OnFieldChanged -= HandleFieldChanged;
+    }
+}

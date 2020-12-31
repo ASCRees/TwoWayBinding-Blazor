@@ -1,0 +1,15 @@
+﻿@page "/TwoWayBindingPartial"
+
+
+<h3>Two Way Binding Partial Class </h3>
+
+<div>
+    <EditForm EditContext="@editContext1">
+
+        <InputNumber @bind-Value="calcNumbers.Number1" />
+        +
+        <InputNumber @bind-Value="calcNumbers.Number2" />
+        =
+        <InputNumber @bind-Value="calcNumbers.Result" />
+    </EditForm>
+</div>

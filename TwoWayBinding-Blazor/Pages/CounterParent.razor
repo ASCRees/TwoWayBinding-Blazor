@@ -1,0 +1,16 @@
+﻿@page "/counter"
+
+<h1>Counter Parent</h1>
+
+<p>Parent Current count: @currentCount</p>
+
+<CounterChild CounterVal="@currentCount" ButtonClicked="UpdateCounter"/>
+
+@code {
+    private int currentCount = 10;
+
+    private void UpdateCounter(int countValue)
+    {
+         currentCount = countValue;
+    }
+}
