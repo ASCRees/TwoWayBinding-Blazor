@@ -23,9 +23,7 @@ namespace TwoWayBinding_Blazor.Tests
         public void TestWeatherSummariesCount()
         {
             // Arrange
-
             // Act
-
             // Assert
 
             weatherForecastService.WeatherSummaries.Count().Should().Be(9);

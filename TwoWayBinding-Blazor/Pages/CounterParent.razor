@@ -4,13 +4,11 @@
 
 <p>Parent Current count: @currentCount</p>
 
-<CounterChild  CounterVal="@currentCount" ButtonClicked="UpdateCounter"/>
+<CounterChild CounterVal="@currentCount" ButtonClicked="UpdateCounter" />
 
-@code {
-    private int currentCount = 10;
+@code { private int currentCount = 10;
 
-    private void UpdateCounter(int countValue)
-    {
-         currentCount = countValue;
-    }
-}
+            private void UpdateCounter(int countValue)
+            {
+                currentCount = countValue;
+            } }

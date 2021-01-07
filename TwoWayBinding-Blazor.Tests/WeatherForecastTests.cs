@@ -24,7 +24,6 @@ namespace TwoWayBinding_Blazor.Tests
             // Act
             weatherForecast.TemperatureC = 30;
             // Assert
-
             weatherForecast.TemperatureF.Should().Be(85);
         }
     }

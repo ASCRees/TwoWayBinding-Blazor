@@ -33,7 +33,7 @@ namespace TwoWayBinding_Blazor.Tests
             // the counter in the <p> element
             cut.Find("button").Click();
 
-            // Assert: first find the <p> element, then verify its content
+            // Assert:  first find the <p> element, then verify its content
             //  cut.Find("#childCounter").MarkupMatches("<p id='childCounter'>Child Current count: 11</p>");
             cut.Find("#childCounter").InnerHtml.Equals("Child Current count: 11");
         }
