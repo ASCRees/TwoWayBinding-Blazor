@@ -1,0 +1,22 @@
+﻿<h3>Counter Child</h3>
+
+<p id="childCounter">Child Current count: @CounterVal</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+    @code {
+        [Parameter]
+        public int CounterVal { get; set; }
+
+        [Parameter]
+        public EventCallback<int>  ButtonClicked { get; set; }
+
+        private int currentCount = 0;
+
+        private async Task IncrementCount()
+        {
+            CounterVal++;
+            await ButtonClicked.InvokeAsync(CounterVal);
+        }
+    }
